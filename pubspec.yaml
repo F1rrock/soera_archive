@@ -1,0 +1,16 @@
+name: soera_archive
+description: SOERA archive module, causing gateway which provides OS Shell looking API to access real implementation of company archive.
+version: 1.0.0
+# repository: https://github.com/my_org/my_repo
+
+environment:
+  sdk: ^3.2.4
+
+# Add regular dependencies here.
+dependencies:
+  dotenv: ^4.2.0
+  mocktail: ^1.0.2
+
+dev_dependencies:
+  lints: ^2.1.0
+  test: ^1.24.0
