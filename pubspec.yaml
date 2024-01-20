@@ -1,7 +1,7 @@
 name: soera_archive
 description: SOERA archive module, causing gateway which provides OS Shell looking API to access real implementation of company archive.
 version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+repository: https://github.com/F1rrock/soera_archive.git
 
 environment:
   sdk: ^3.2.4
