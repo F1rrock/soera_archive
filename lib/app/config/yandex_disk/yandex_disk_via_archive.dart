@@ -10,19 +10,14 @@ import 'package:soera_archive/app/infrastructure/yandex_disk/api/yandex_rest.dar
 import 'package:soera_archive/app/infrastructure/yandex_disk/gateways/disk_resources.dart';
 import 'package:soera_archive/app/infrastructure/yandex_disk/pipeline/yandex_ls_decoded_response.dart';
 import 'package:soera_archive/core/external/bus.dart';
-import 'package:dotenv/dotenv.dart';
 import 'package:soera_archive/core/external/executable.dart';
 
 final class YandexDiskViaArchive implements Bus<AppConfig> {
-  const YandexDiskViaArchive();
+  final String _token;
 
-  String get _token {
-    final env = DotEnv(includePlatformEnvironment: true);
-    env.load(['env/yandex_disk/.env']);
-    final token = env["TOKEN"];
-    env.clear();
-    return token ?? '';
-  }
+  const YandexDiskViaArchive({
+    required final String token,
+  }) : _token = token;
 
   Executable get _ls => const YandexLSDecodedResponse(
       origin: LS.using(
