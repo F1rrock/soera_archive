@@ -3,10 +3,10 @@ import 'package:soera_archive/core/external/context.dart';
 import 'package:soera_archive/core/external/executable.dart';
 
 final class Cache implements Executable {
-  final Stream<String> _origin;
+  final Iterable<String> _origin;
 
   const Cache({
-    required final Stream<String> origin,
+    required final Iterable<String> origin,
   }) : _origin = origin;
 
   @override
@@ -14,6 +14,6 @@ final class Cache implements Executable {
     final Context<String> ctx,
     final Client client,
   ) async* {
-    yield* _origin;
+    yield* Stream.fromIterable(_origin);
   }
 }
