@@ -40,7 +40,7 @@ final class YandexLSDecodedResponse implements Executable {
   StreamTransformer<String, String> get _handler =>
       StreamTransformer.fromHandlers(
           handleData: (data, sink) => sink.add(data),
-          handleError: (error, __, sink) {
+          handleError: (error, _, sink) {
             final failedDecodeError = const ServerError(
               message: _decodingErrorResponse,
             );
